@@ -1,0 +1,26 @@
+# Core requirements
+torch>=1.10.0
+torchvision>=0.11.0
+numpy>=1.21.0
+tqdm>=4.62.0
+
+# Logging and visualization
+tensorboard>=2.7.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Configuration and utils
+pyyaml>=6.0
+addict>=2.4.0
+
+# Testing
+pytest>=7.0.0
+
+# Optional (for AutoAugment)
+pillow>=9.0.0
+albumentations>=1.1.0
+
+# Development
+black>=22.1.0
+flake8>=4.0.0
+isort>=5.10.1
