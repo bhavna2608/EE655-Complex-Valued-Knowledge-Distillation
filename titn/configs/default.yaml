@@ -1,0 +1,37 @@
+# Model Architecture
+img_size: 32
+outer_patch: 8
+inner_patch: 4
+pixel_patch: 2
+outer_dim: 192
+inner_dim: 192
+depth: 12
+num_classes: 100  # Will be overridden by dataset
+
+# Training
+epochs: 600
+batch_size: 1024
+lr: 0.1
+momentum: 0.9
+weight_decay: 1e-4
+alpha: 0.5  # For hybrid loss
+
+# Augmentation
+use_autoaugment: true
+use_cutmix: true
+cutmix_alpha: 0.5
+
+# Teacher Model
+teacher:
+  name: vgg16_bn  # Options: vgg16_bn, vgg19, resnet50, densenet121, etc.
+  weights: null   # Path to custom weights or null for pretrained
+  freeze: true    # Freeze teacher weights during distillation
+  output_layer: "fc"  # Which layer to use for distillation
+
+# Dataset
+dataset: cifar100
+data_dir: ./data
+
+vit:
+  num_heads: 8
+  mlp_ratio: 4

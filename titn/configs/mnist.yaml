@@ -1,0 +1,21 @@
+# Inherits all defaults from default.yaml and overrides these:
+num_classes: 10
+dataset: mnist
+img_size: 28  # MNIST images are 28x28
+
+# Training adjustments for MNIST
+epochs: 350  # From paper results (Figure 8)
+batch_size: 1024
+
+# Different augmentation strategy for MNIST (from paper Section 4.1)
+use_autoaugment: false
+use_cutmix: false
+augmentations:
+  - name: RandomRotation
+    degrees: 15
+  - name: RandomAffine
+    degrees: 0
+    translate: [0.1, 0.1]
+  - name: ColorJitter
+    brightness: 0.2
+    contrast: 0.2

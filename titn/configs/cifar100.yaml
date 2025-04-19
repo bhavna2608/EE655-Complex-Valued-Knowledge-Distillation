@@ -1,0 +1,19 @@
+# Inherits all defaults from default.yaml and overrides these:
+num_classes: 100
+dataset: cifar100
+
+# Model-specific parameters
+img_size: 32  # CIFAR-100 image size
+outer_dim: 64  # Example dimensionality of each patch
+outer_patch: 16  # Patch size (size of each patch in Conv2d)
+num_heads: 8
+depth: 12
+
+# Training adjustments for CIFAR-100
+epochs: 600  # From paper results (Figure 4)
+batch_size: 1024
+
+# Augmentation specific to CIFAR-100
+use_autoaugment: true
+use_cutmix: true
+cutmix_alpha: 0.5
