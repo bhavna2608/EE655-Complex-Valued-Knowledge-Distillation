@@ -1,0 +1,12 @@
+# Inherits all defaults from default.yaml and overrides these:
+num_classes: 10
+dataset: cifar10
+
+# Training adjustments for CIFAR-10
+epochs: 350  # From paper results (Figure 7)
+batch_size: 1024
+
+# Augmentation specific to CIFAR-10
+use_autoaugment: true
+use_cutmix: true
+cutmix_alpha: 0.5
